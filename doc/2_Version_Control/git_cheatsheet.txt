@@ -1,0 +1,25 @@
+git commit
+-creates a copy of program version (essentially a version history)
+git branch [branchName]
+-names/references the current commit
+git checkout [branchName]
+-makes called branch the active environment
+git checkout -b [branchName]
+-creates a branch and makes it active
+git pull
+-fetches and merges
+-2 versions (git pull --rebase)[short hand for fetch and rebase] 
+and git pull --no-rebase (shorthand for fetch and merge)
+git push
+-update remote repository with changes made in local
+-shares work with others
+git merge
+-merges active branch with called branch (in a new commit)
+git rebase
+-copies changes in called branch to a copy of active branch
+-similar to merge but provides a more linear history of changes
+git fetch
+-fetches data from a remote repository
+-downloads commits in remote repository that the local repository is missing
+-updates where our remote branches point
+-essentially downloads updates from remote to local version
