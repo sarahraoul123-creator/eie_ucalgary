@@ -23,3 +23,13 @@ git fetch
 -downloads commits in remote repository that the local repository is missing
 -updates where our remote branches point
 -essentially downloads updates from remote to local version
+git add
+-adds file to staging area
+git status
+-status of current branch and relation to origin repository
+git log
+-most recent commits
+git push -u <remote> <branch>
+-only needed on first push. Specifies details
+git diff
+-checks what changed 
