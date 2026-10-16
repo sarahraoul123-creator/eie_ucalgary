@@ -19,6 +19,9 @@ int main(void) {
   if (0 > LED_init()) {
     return 0;
   }
+  
+  printk("Start blinking");
+  LED_blink(LED0,LED_1HZ);
 
   while (1) {
     k_msleep(SLEEP_MS);
