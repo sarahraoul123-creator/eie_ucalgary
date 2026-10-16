@@ -40,7 +40,19 @@ int main(void) {
     
     if(BTN_check_clear_pressed(BTN0)){
       LED_toggle(LED0);
-      printk("Button 0 pressed!");
+      printk("Button 0 pressed!\n");
+    }
+    if(BTN_check_clear_pressed(BTN1)){
+      LED_toggle(LED1);
+      printk("Button 1 pressed!\n");
+    }
+    if(BTN_check_clear_pressed(BTN2)){
+      LED_toggle(LED2);
+      printk("Button 2 pressed!\n");
+    }
+    if(BTN_check_clear_pressed(BTN3)){
+      LED_toggle(LED3);
+      printk("Button 3 pressed!\n");
     }
     k_msleep(SLEEP_MS);
   }
