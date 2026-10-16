@@ -13,13 +13,17 @@
 #define SLEEP_MS 1
 
 int main(void) {
+  printk("Hello World!");
   if (0 > BTN_init()) {
     return 0;
   }
+
+  
+  printk("I workin' like a dawg day and night");
   if (0 > LED_init()) {
     return 0;
   }
-
+  printk("Sup mann");
   while (1) {
     k_msleep(SLEEP_MS);
   }
