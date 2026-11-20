@@ -26,9 +26,9 @@ int main(void){
         return -1;
     }
 
-    ret0 = gpio_pin_configure_dt(&led0, GPIO_OUTPUT_ACTIVE);
+    ret0 = gpio_pin_configure_dt(&led0, GPIO_OUTPUT_INACTIVE);
     ret1 = gpio_pin_configure_dt(&led1, GPIO_OUTPUT_INACTIVE);
-    ret2 = gpio_pin_configure_dt(&led2, GPIO_OUTPUT_ACTIVE);
+    ret2 = gpio_pin_configure_dt(&led2, GPIO_OUTPUT_INACTIVE);
     ret3 = gpio_pin_configure_dt(&led3, GPIO_OUTPUT_INACTIVE);
 
     if (ret0<0){
@@ -44,13 +44,29 @@ int main(void){
         return ret3;
     }
 
+    int cnt=0;
     while(1) {
-        gpio_pin_toggle_dt(&led0);
-        gpio_pin_toggle_dt(&led1);
-        gpio_pin_toggle_dt(&led2);
-        gpio_pin_toggle_dt(&led3);
 
-        k_msleep(1000);
+        //Cnt cycles from 0to4 turning on a different LED
+        if(cnt<2||cnt==4){
+            gpio_pin_toggle_dt(&led0);
+        }
+        if(cnt>0 && cnt<3){
+            gpio_pin_toggle_dt(&led1);
+        }
+        if(cnt>1 && cnt<4){
+            gpio_pin_toggle_dt(&led3);
+        }
+        if(cnt>2){
+            gpio_pin_toggle_dt(&led2);
+            if (cnt==4){
+                cnt=0;
+            }
+        }
+        cnt++;
+        
+        k_msleep(200);
+           
     }
 
     return 0;
